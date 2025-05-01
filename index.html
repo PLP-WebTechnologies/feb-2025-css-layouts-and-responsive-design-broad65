@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Harnessing Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Grid Container for the overall layout */
+    .container {
+      display: grid;
+      grid-template-areas: 
+        "nav nav nav"
+        "main main sidebar"
+        "footer footer footer";
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 2fr 1fr;
+      min-height: 100vh;
+      gap: 10px;
+    }
+
+    /* Navigation Bar with Flexbox */
+    nav {
+      grid-area: nav;
+      background-color: #1a3c34;
+      padding: 15px;
+    }
+
+    .nav-list {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+
+    .nav-list li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-list li a:hover {
+      color: #f4d03f;
+    }
+
+    /* Main Content */
+    main {
+      grid-area: main;
+      padding: 20px;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    /* Sidebar */
+    aside {
+      grid-area: sidebar;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    /* Footer */
+    footer {
+      grid-area: footer;
+      background-color: #1a3c34;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Mobile-first Media Queries */
+    @media (max-width: 600px) {
+      .container {
+        grid-template-areas: 
+          "nav"
+          "main"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      main, aside {
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .container {
+        grid-template-areas: 
+          "nav nav"
+          "main sidebar"
+          "footer footer";
+        grid-template-columns: 3fr 1fr;
+      }
+
+      .nav-list {
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .container {
+        grid-template-columns: 3fr 1fr;
+      }
+
+      .nav-list {
+        justify-content: flex-end;
+        gap: 30px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Solar Energy Harnessing Project</h1>
+      <img src="solar-panel.jpg" alt="Solar Energy Harnessing with Fixed and Tracking Systems" class="hero-image">
+      <p>In this project, we explore solar energy harnessing using fixed and tracking systems. Fixed panels, as shown in Fig. 1.1, remain static, while tracking systems adjust to follow the sun’s path, maximizing energy capture.</p>
+      <p>We aim to optimize tracking precision, boost energy efficiency, enhance durability, and integrate smart features for a sustainable solution in Nairobi.</p>
+    </main>
+    <aside>
+      <h2>Quick Facts</h2>
+      <ul>
+        <li>Location: Nairobi, Africa</li>
+        <li>Tracking: Dual-Axis System</li>
+        <li>Energy Gain: Up to 40% more</li>
+      </ul>
+    </aside>
+    <footer>
+      <p>&copy; 2025 Solar Energy Project. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
